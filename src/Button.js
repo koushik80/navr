@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 
-
 const Button = ({
     children,
     primary,
@@ -10,10 +9,13 @@ const Button = ({
     danger,
     outline,
     rounded,
-    onClick
+    ...rest
 }) => {
 
-    const classes = classnames('flex items-center px-3 py-1.5 border', {
+    const classes = classnames(
+        rest.className,
+        'flex items-center px-3 py-1.5 border',
+        {
         'border-blue-500 bg-blue-500 text-white': primary,
         'border-gray-900 bg-gray-900 text-white': secondary,
         'border-green-500 bg-green-500 text-white': success,
@@ -26,26 +28,31 @@ const Button = ({
         'text-green-500': outline && success,
         'text-yellow-400': outline && warning,
         'text-red-500': outline && danger
-    });
+        }
+    );
 
-    return <button onClick={onClick} className={classes}>{children}</button>;
+    return (
+        <button {...rest} className={classes}>
+            {children}
+        </button>
+    );
 }
 
 Button.propTypes = {
-    checkVariationValue: ({ primary, secondary, success, warning, danger, outline, rounded }) => {
-        const count = Number(!!primary)
-            + Number(!!secondary)
-            + Number(!!warning)
-            + Number(!!success)
-            + Number(!!danger)
-            + Number(!!outline)
-            + Number(!!rounded)
+    checkVariationValue: ({ primary, secondary, success, warning, danger }) => {
+        const count =
+            Number(!!primary) +
+            Number(!!secondary) +
+            Number(!!warning) +
+            Number(!!success) +
+            Number(!!danger);
 
         if (count > 1) {
-            return new Error('Only one of primary, secondary, success, warning, danger, outline, rounded can be true')
+            return new Error(
+                'Only one of primary, secondary, success, warning, danger can be true'
+            );
         }
     }
-
 };
 
 export default Button;
