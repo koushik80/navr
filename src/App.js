@@ -1,9 +1,17 @@
-import React from 'react';
+import Button from './Button';
 
 const App = () => {
   return (
     <div>
-      Starting new project ...
+      <div>
+        <Button success rounded outline>Click</Button>
+      </div>
+      <div>
+        <Button danger outline>Buy now!</Button>
+      </div>
+      <div>
+        <Button>Deal</Button>
+      </div>
     </div>
   )
 }
