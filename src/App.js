@@ -1,69 +1,28 @@
-import { IoAirplaneSharp, IoAtCircleSharp, IoCaretForwardCircleSharp } from 'react-icons/io5';
-import Button from './Button';
+import Accordion from './components/Accordion';
 
 const App = () => {
-  const handleClick = () => {
-    console.log('Button clicked!')
-  };
+  const items = [
+    {
+      id: '123',
+      label: 'This is test',
+      content: 'The more details'
+    },
+    {
+      id: '724',
+      label: 'Project setup',
+      content: 'More about project'
+    },
+    {
+      id: '325',
+      label: 'Project is going to be decided',
+      content: 'Will be explained soon'
+    }
+  ];
 
-  return (
-    <div>
-      <div>
-        <Button
-          primary
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}>
-          <IoAirplaneSharp />
-          Continue
-        </Button>
-      </div>
-      <div>
-        <Button
-          secondary
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}>
-          <IoAtCircleSharp />
-          Buy now!
-        </Button>
-      </div>
-      <div>
-        <Button
-          success
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}>
-          <IoCaretForwardCircleSharp />
-          Click here
-        </Button>
-      </div>
-      <div>
-        <Button
-          warning
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}>
-          Warning
-        </Button>
-      </div>
-      <div>
-        <Button
-          danger
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}>
-          Danger
-        </Button>
-      </div>
-    </div>
-  )
+
+  return <Accordion items={items} />;
 }
 
 export default App;
+
 
