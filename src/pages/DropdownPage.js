@@ -1,8 +1,7 @@
-import Dropdown from './components/Dropdown';
+import Dropdown from '../components/Dropdown'
 
-const App = () => {
-
-    const options = [
+const DropdownPage = () => {
+  const options = [
         {label:'Red', value:'red'},
         {label:'Green', value:'green'},
         {label:'Blue', value:'blue'},
@@ -10,11 +9,6 @@ const App = () => {
     ];
 
     return <Dropdown options={options} />;
-
 }
 
-export default App;
-
-
-
-
+export default DropdownPage;
