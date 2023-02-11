@@ -1,4 +1,3 @@
-/*
 import { useState } from 'react';
 import Dropdown from '../components/Dropdown'
 
@@ -16,11 +15,11 @@ const DropdownPage = () => {
         {label:'Teal', value:'teal'}
     ];
 
-    return <Dropdown
-        options={options}
-        value={selection}
-        onChange={handleSelect} />;
+    return (
+        <div className="flex">
+            <Dropdown options={options} value={selection} onChange={handleSelect} />
+        </div>
+    );
 }
 
 export default DropdownPage;
-*/
