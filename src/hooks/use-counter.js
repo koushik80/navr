@@ -15,6 +15,6 @@ function useCounter(initialCount) {
     count,
     increment
   };
-};
+}
 
 export default useCounter;
