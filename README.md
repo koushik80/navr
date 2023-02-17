@@ -7,7 +7,7 @@
 </div>
 
 <div>
-<h3 align="left">This is a practice app from sketch</h3>
+<h3 align="left">This is a practice app from sketch with reusable components</h3>
 </div>
 
 <div>
